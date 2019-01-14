@@ -10,9 +10,10 @@ public class Avvia {
 		float prezzo;
 		int nIngredienti;
 		boolean termina = false;
+		Menu m = null;
 		do {
 			System.out.println(
-					"Scegli l'operazione da eseguire:\n1-Inserisci una pizza nel menu\n2-Trova le pizze senza un certo ingredienti\n3-Trova le pizze sopra il prezzo indicato\n4-Vedi una certa pizza\n5-Conta le pizze con più di 10 ingredienti\n6-Trova la pizza più economica");
+					"Scegli l'operazione da eseguire:\n1-Inserisci una pizza nel menu\n2-Trova le pizze senza un certo ingredienti\n3-Trova le pizze sopra il prezzo indicato\n4-Vedi gli ingredienti di una pizza\n5-Conta le pizze\n6-Trova la pizza più economica");
 			switch (sc.nextInt()) {
 			case 1:
 				System.out.println("Inserisci il nome della pizza: ");
@@ -40,14 +41,22 @@ public class Avvia {
 				}
 				break;
 			case 2:
+				System.out.println("Inserisci l'ingrediente indesiderato per visualizzare le pizze senza di esso");
+				m.pizzeSenzaIngrediente(sc.next());
 				break;
 			case 3:
+				System.out.println("Inserisci il prezzo minimo");
+				m.pizzeCostose(sc.nextFloat());
 				break;
 			case 4:
+				System.out.println("Inserisci il nome della pizza di cui vuoi vedere gli ingredienti");
+				m.trovaPizza(sc.next());
 				break;
 			case 5:
+				m.contaPizze();
 				break;
 			case 6:
+				m.pizzaPiuEconomica();
 				break;
 			default:
 				termina = true;
