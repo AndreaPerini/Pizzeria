@@ -8,6 +8,9 @@ public class Menu {
 	private String[] ingr = new String[30];
 	private static boolean stampa = true;
 
+	public Menu() {
+	}
+
 	public void aggiungiPizza(Pizza pizza) {
 		menu[index] = pizza;
 		index++;

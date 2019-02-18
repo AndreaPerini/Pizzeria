@@ -4,13 +4,14 @@ public class Avvia {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Pizza p;
+		Pizza p = new Pizza();
+		SuperPizza sp = new SuperPizza();
 		String nome;
 		String[] ingredienti;
 		float prezzo;
 		int nIngredienti;
 		boolean termina = false;
-		Menu m = null;
+		Menu m = new Menu();
 		do {
 			System.out.println(
 					"Scegli l'operazione da eseguire:\n1-Inserisci una pizza nel menu\n2-Trova le pizze senza un certo ingredienti\n3-Trova le pizze sopra il prezzo indicato\n4-Vedi gli ingredienti di una pizza\n5-Conta le pizze\n6-Trova la pizza più economica");
@@ -35,9 +36,13 @@ public class Avvia {
 				System.out.println("Inserisci il prezzo della pizza: ");
 				prezzo = sc.nextFloat();
 				if (ingredienti.length == 10) {
-					p = new Pizza(nome, ingredienti, prezzo);
+					p.setNome(nome);
+					p.setIngredienti(ingredienti);
+					p.setPrezzo(prezzo);
 				} else {
-					p = new SuperPizza(nome, prezzo, ingredienti);
+					sp.setNome(nome);
+					sp.setPrezzo(prezzo);
+					sp.setIngredienti(ingredienti);
 				}
 				break;
 			case 2:
@@ -61,8 +66,9 @@ public class Avvia {
 			default:
 				termina = true;
 			}
-		} while (termina = false);
+		} while (!termina);
 		System.out.println("Grazie per essere venuto nella nostra pizzeria, Arrivederci");
+		sc.close();
 	}
 
 }

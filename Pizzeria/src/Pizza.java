@@ -5,6 +5,10 @@ public class Pizza {
 	private String[] ingredienti = new String[10];
 	private float prezzo;
 
+	public Pizza() {
+		super();
+	}
+
 	public String getNome() {
 		return nome;
 	}
