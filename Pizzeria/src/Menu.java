@@ -42,7 +42,9 @@ public class Menu {
 	public void trovaPizza(String nome) {
 		for(int i=0; i<index; i++) {
 			if(menu[i].getNome().equalsIgnoreCase(nome)) {
-				System.out.println(menu[i].getIngredienti());
+				for(int j=0; j<menu[i].getIngredienti().length; j++) {
+					System.out.println(menu[i].getIngredienti()[j]);
+				}
 			}
 		}
 	}
